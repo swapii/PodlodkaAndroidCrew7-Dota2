@@ -19,6 +19,7 @@ android {
 dependencies {
 
     implementation(Common.Android.X.activityCompose)
+    implementation(Common.Android.X.constraintLayoutCompose)
     implementation(Common.Android.X.Compose.material)
 
     implementation("io.coil-kt:coil-compose:1.4.0")

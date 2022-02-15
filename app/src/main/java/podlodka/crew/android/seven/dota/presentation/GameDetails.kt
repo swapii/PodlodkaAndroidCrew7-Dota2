@@ -55,55 +55,7 @@ internal fun GameDetails() {
                 .height(300.dp)
         )
 
-        Image(
-            painter = rememberImagePainter(
-                data = "https://scontent-arn2-1.xx.fbcdn.net/v/t1.6435-9/p320x320/66162438_2584053128326795_4329606593789296640_n.png?_nc_cat=109&ccb=1-5&_nc_sid=7aed08&efg=eyJpIjoidCJ9&_nc_ohc=Kcc6QC-e9xwAX8H9-wH&_nc_ht=scontent-arn2-1.xx&oh=00_AT9sONelr7lahF3mM77d0texHRPYQq5Qd4FYMCad7oGf_A&oe=6231E698".toUri()
-            ),
-            contentDescription = null,
-            modifier = Modifier
-                .clip(RoundedCornerShape(12.dp))
-                .border(
-                    width = 2.dp,
-                    color = Color(0xFF1F2430),
-                    shape = RoundedCornerShape(12.dp),
-                )
-                .size(84.dp)
-        )
-
-        Text(
-            text = "DoTA 2",
-            style = MaterialTheme.typography.h6,
-            color = MaterialTheme.colors.onBackground,
-        )
-
-        Text(
-            text = "RATING",
-            color = MaterialTheme.colors.onBackground,
-        )
-
-        Text(
-            text = "70M",
-            style = MaterialTheme.typography.caption,
-            color = Color(0xFF45454D),
-        )
-
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
-            repeat(5) {
-                Text(
-                    text = "TAG",
-                    color = MaterialTheme.colors.primaryVariant,
-                    modifier = Modifier
-                        .clip(CircleShape)
-                        .background(MaterialTheme.colors.primaryVariant)
-                        .padding(
-                            vertical = 5.dp,
-                            horizontal = 10.dp,
-                        )
-                )
-            }
-        }
+        Header()
 
         Text(
             text = "Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the \"Ancient\", whilst defending their own.",
@@ -115,8 +67,6 @@ internal fun GameDetails() {
             text = "MEDIA",
             color = MaterialTheme.colors.onBackground,
         )
-
-        //
 
         Row(
             horizontalArrangement = Arrangement.spacedBy(24.dp),
