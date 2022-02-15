@@ -7,6 +7,7 @@ import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -27,6 +28,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
@@ -42,17 +44,7 @@ internal fun GameDetails() {
             .padding(24.dp)
     ) {
 
-        Icon(
-            imageVector = Icons.Default.ArrowBack,
-            contentDescription = "Back button",
-            tint = MaterialTheme.colors.onBackground,
-        )
-
-        Icon(
-            imageVector = Icons.Default.MoreVert,
-            contentDescription = "More button",
-            tint = MaterialTheme.colors.onBackground,
-        )
+        Toolbar()
 
         Image(
             painter = rememberImagePainter(data = "https://s3-alpha-sig.figma.com/img/284d/401f/f98fb91fbba05e15f99cdcd8e4f9d673?Expires=1646006400&Signature=OAGiVBdLRFBWxvG4UkCHI9QYZQ6UoC2Mo5nag0ZPMmDdPcCG6xKE9-TMgsHvWjfaauYmi8XSHiQyb3fRd5NXPuDWkw5ByMPqj7R97EDvFer8G9pZDXa~5rAMlPuqEggABRYR8zeOd~kKDJsvyyKeVGGUf90JyW6z7kwYZPIKmhfpard6R38-Y9ddX-xbzNTcPE5-7hRSobk3BtUMEJfz5UCKaSaQrZPpsHloNiXeAtI7RDQUuGMLWA5gMc6VFgTeZ4fl0I7K8M~qHIInOUzRbIDjl8gXFXXP0hpitPIfmX9A6vOVdxdjeel2nkQKLyv0ndeO6h3wsmec3WkB38R-0w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"),
@@ -207,4 +199,31 @@ internal fun GameDetails() {
         }
 
     }
+}
+
+@Composable
+private fun Toolbar() {
+    Row {
+        ToolbarButton(Icons.Default.ArrowBack)
+        Spacer(modifier = Modifier.weight(1f))
+        ToolbarButton(Icons.Default.MoreVert)
+    }
+}
+
+@Composable
+private fun ToolbarButton(icon: ImageVector) {
+    Icon(
+        imageVector = icon,
+        contentDescription = null,
+        tint = MaterialTheme.colors.onBackground,
+        modifier = Modifier
+            .clip(CircleShape)
+            .border(
+                width = 1.dp,
+                color = Color(0x4DF2F2F2),
+                shape = CircleShape,
+            )
+            .background(Color(0x47FFFFFF))
+            .padding(16.dp)
+    )
 }
