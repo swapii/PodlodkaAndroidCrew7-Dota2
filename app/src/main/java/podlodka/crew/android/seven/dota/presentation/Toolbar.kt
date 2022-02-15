@@ -19,8 +19,12 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 
 @Composable
-internal fun Toolbar() {
-    Row {
+internal fun Toolbar(
+    modifier: Modifier = Modifier,
+) {
+    Row(
+        modifier = modifier
+    ) {
         ToolbarButton(Icons.Default.ArrowBack)
         Spacer(modifier = Modifier.weight(1f))
         ToolbarButton(Icons.Default.MoreVert)
