@@ -10,4 +10,15 @@ android {
         namespace = "podlodka.crew.android.seven.dota"
     }
 
+    buildFeatures {
+        compose = true
+    }
+
+}
+
+dependencies {
+
+    implementation(Common.Android.X.activityCompose)
+    implementation(Common.Android.X.Compose.material)
+
 }

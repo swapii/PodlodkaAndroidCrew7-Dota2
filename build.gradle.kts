@@ -30,6 +30,10 @@ subprojects {
                     targetCompatibility = JavaVersion.VERSION_1_8
                 }
 
+                composeOptions {
+                    kotlinCompilerExtensionVersion = Common.Android.X.Compose.version
+                }
+
             }
 
         }
