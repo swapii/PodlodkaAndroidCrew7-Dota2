@@ -16,6 +16,8 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import coil.compose.rememberImagePainter
+import java.time.format.FormatStyle
+import podlodka.crew.android.seven.dota.common.formatAtZone
 
 @Composable
 internal fun Review(
@@ -57,7 +59,7 @@ internal fun Review(
         )
 
         Text(
-            text = review.date.toString(),
+            text = review.createdAt.formatAtZone(formatStyle = FormatStyle.MEDIUM),
             color = Color(0x66FFFFFF),
             style = MaterialTheme.typography.caption,
             modifier = Modifier
