@@ -1,4 +1,4 @@
-package podlodka.crew.android.seven.dota.presentation
+package podlodka.crew.android.seven.dota.common.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalDensity

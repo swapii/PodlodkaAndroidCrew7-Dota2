@@ -13,7 +13,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import podlodka.crew.android.seven.dota.feature.rating.domain.Rating
-import podlodka.crew.android.seven.dota.presentation.CroppedWidthShape
+import podlodka.crew.android.seven.dota.common.presentation.CroppedWidthShape
 
 @Composable
 internal fun RatingStars(

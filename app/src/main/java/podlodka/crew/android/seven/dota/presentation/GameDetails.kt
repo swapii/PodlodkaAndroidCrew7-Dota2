@@ -24,6 +24,7 @@ import androidx.compose.ui.layout.boundsInParent
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
+import podlodka.crew.android.seven.dota.common.presentation.withDensity
 
 @Composable
 internal fun GameDetails() {
