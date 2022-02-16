@@ -1,4 +1,4 @@
-package podlodka.crew.android.seven.dota.presentation
+package podlodka.crew.android.seven.dota.feature.rating.presentation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -12,24 +12,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import podlodka.crew.android.seven.dota.feature.rating.domain.Rating
+import podlodka.crew.android.seven.dota.presentation.CroppedWidthShape
 
 @Composable
 internal fun RatingStars(
+    rating: Rating,
     modifier: Modifier = Modifier,
 ) {
-    val rating = 0.67f
     Box(
         modifier = modifier,
     ) {
         Stars(
             color = Color(0xFF282E3E),
             modifier = Modifier
-                .clip(CroppedWidthShape(leftFraction = rating))
+                .clip(CroppedWidthShape(leftFraction = rating.value))
         )
         Stars(
             color = Color(0xFFF4D144),
             modifier = Modifier
-                .clip(CroppedWidthShape(rightFraction = rating))
+                .clip(CroppedWidthShape(rightFraction = rating.value))
         )
     }
 }

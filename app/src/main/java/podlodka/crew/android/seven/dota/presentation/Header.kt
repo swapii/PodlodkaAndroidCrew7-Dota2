@@ -18,10 +18,13 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.net.toUri
 import coil.compose.rememberImagePainter
+import podlodka.crew.android.seven.dota.feature.rating.domain.Rating
+import podlodka.crew.android.seven.dota.feature.rating.presentation.RatingStars
 
 @Composable
 fun Header(
     modifier: Modifier = Modifier,
+    rating: Rating,
 ) {
 
     ConstraintLayout(
@@ -70,7 +73,7 @@ fun Header(
                 }
         ) {
 
-            RatingStars()
+            RatingStars(rating = rating)
 
             Text(
                 text = "70M",

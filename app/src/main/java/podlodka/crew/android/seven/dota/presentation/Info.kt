@@ -19,11 +19,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import coil.compose.rememberImagePainter
+import podlodka.crew.android.seven.dota.feature.rating.domain.Rating
 
 @Composable
 internal fun Info(
     modifier: Modifier = Modifier,
 ) {
+
+    val rating = Rating(0.67f)
+
     Column(
         verticalArrangement = Arrangement.spacedBy(24.dp),
         modifier = modifier
@@ -34,6 +38,7 @@ internal fun Info(
         val horizontalPadding = 24.dp
 
         Header(
+            rating = rating,
             modifier = Modifier
                 .padding(horizontal = horizontalPadding)
         )
@@ -70,7 +75,9 @@ internal fun Info(
 
         ReviewsAndRatings(
             horizontalPadding = horizontalPadding,
+            rating = rating,
         )
 
     }
+
 }

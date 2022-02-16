@@ -13,11 +13,14 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
+import podlodka.crew.android.seven.dota.feature.rating.domain.Rating
+import podlodka.crew.android.seven.dota.feature.rating.presentation.RatingStars
 import podlodka.crew.android.seven.dota.feature.review.presentation.Reviews
 
 @Composable
 internal fun ReviewsAndRatings(
     horizontalPadding: Dp,
+    rating: Rating,
 ) {
 
     Column {
@@ -58,7 +61,8 @@ internal fun ReviewsAndRatings(
                         start.linkTo(scoreRef.end, margin = 16.dp)
                         top.linkTo(scoreRef.top)
                         bottom.linkTo(reviewsCountRef.top)
-                    }
+                    },
+                rating = rating,
             )
 
             Text(
