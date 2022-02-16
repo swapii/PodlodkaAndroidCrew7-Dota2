@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.ui.graphics.Color
+import podlodka.crew.android.seven.dota.feature.game.details.presentation.GameDetails
 
 class MainActivity : ComponentActivity() {
 
