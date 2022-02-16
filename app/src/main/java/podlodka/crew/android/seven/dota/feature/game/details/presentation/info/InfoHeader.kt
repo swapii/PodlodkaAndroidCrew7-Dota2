@@ -1,4 +1,4 @@
-package podlodka.crew.android.seven.dota.feature.game.details.presentation
+package podlodka.crew.android.seven.dota.feature.game.details.presentation.info
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
