@@ -67,10 +67,11 @@ internal fun ReviewsAndRatings(
                 color = Color(0xFFA8ADB7),
                 modifier = Modifier
                     .constrainAs(reviewsCountRef) {
-                        top.linkTo(starsRef.bottom, margin = 8.dp)
+                        top.linkTo(starsRef.bottom)
                         bottom.linkTo(scoreRef.bottom)
                         start.linkTo(starsRef.start)
                     }
+                    .padding(top = 8.dp)
             )
 
         }
