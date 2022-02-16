@@ -1,4 +1,4 @@
-package podlodka.crew.android.seven.dota.presentation
+package podlodka.crew.android.seven.dota.feature.review.presentation
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.padding
@@ -18,6 +18,8 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import coil.compose.rememberImagePainter
 import java.time.format.FormatStyle
 import podlodka.crew.android.seven.dota.common.formatAtZone
+import podlodka.crew.android.seven.dota.feature.review.data.reviewFromAugusteConte
+import podlodka.crew.android.seven.dota.feature.review.domain.Review
 
 @Composable
 internal fun Review(
