@@ -65,7 +65,6 @@ internal fun GameDetails() {
                 }
                 .align(Alignment.BottomCenter)
                 .fillMaxWidth()
-                .background(MaterialTheme.colors.background)
                 .padding(24.dp)
         ) {
             Button(

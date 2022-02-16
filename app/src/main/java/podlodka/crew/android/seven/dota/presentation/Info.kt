@@ -28,22 +28,29 @@ internal fun Info(
         verticalArrangement = Arrangement.spacedBy(24.dp),
         modifier = modifier
             .background(MaterialTheme.colors.background)
-            .padding(horizontal = 24.dp)
             .padding(top = 10.dp)
     ) {
 
-        Header()
+        val horizontalPadding = 24.dp
+
+        Header(
+            modifier = Modifier
+                .padding(horizontal = horizontalPadding)
+        )
 
         Text(
             text = "Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the \"Ancient\", whilst defending their own.",
             style = MaterialTheme.typography.caption,
             color = Color(0xB3EEF2FB),
+            modifier = Modifier
+                .padding(horizontal = horizontalPadding)
         )
 
         Row(
             horizontalArrangement = Arrangement.spacedBy(24.dp),
             modifier = Modifier
                 .horizontalScroll(rememberScrollState())
+                .padding(horizontal = horizontalPadding)
         ) {
             listOf(
                 "https://s3-alpha-sig.figma.com/img/719b/0aa8/0e6e573f15f2d4d74b5ce2df394c368c?Expires=1646006400&Signature=dbm-MzAUJ3GIbchz00qdvOpaGzh5MeCMcIS1qz1FHSRdD~lMD9V0Uf878x96qjQIaehTogpWugHvMccnvyttST5ac1kray8ubBaaWLJpVgKQn~WjdGWWnf50hAEKKDFj1rnmR0H6PajcyoRRpQU6UpVT5JTEP9e~ZXSLX0NMoL2zdzaY6lfqbijHNk8UY5SYdjXytv9W~MMatf1x2tEc8OB1TY3FQt7n5g2iu0aHfoitAEWy2vM~QSfm3gHAtgCWe3l~Jyc~k3jyCELYU2viToeFvptETAdyXpBP2lO0N4cAmIF0woYRNjicWgcjox698Qx7saTVaifrvhh7wvN1IQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA",
@@ -61,7 +68,9 @@ internal fun Info(
                 }
         }
 
-        ReviewsAndRatings()
+        ReviewsAndRatings(
+            horizontalPadding = horizontalPadding,
+        )
 
     }
 }

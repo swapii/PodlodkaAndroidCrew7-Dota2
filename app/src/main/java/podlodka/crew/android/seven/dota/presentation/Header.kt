@@ -20,8 +20,13 @@ import androidx.core.net.toUri
 import coil.compose.rememberImagePainter
 
 @Composable
-fun Header() {
-    ConstraintLayout {
+fun Header(
+    modifier: Modifier = Modifier,
+) {
+
+    ConstraintLayout(
+        modifier = modifier
+    ) {
 
         val (logoRef, titleRef, ratingRef, tagsRef) = createRefs()
 
@@ -85,4 +90,5 @@ fun Header() {
         )
 
     }
+
 }

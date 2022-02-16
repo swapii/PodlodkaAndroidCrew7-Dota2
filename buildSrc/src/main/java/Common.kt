@@ -11,6 +11,7 @@ object Common {
             object Compose {
                 const val version = "1.1.0"
                 const val material = "androidx.compose.material:material:$version"
+                const val tooling = "androidx.compose.ui:ui-tooling:$version"
             }
 
         }
