@@ -18,4 +18,14 @@ object Common {
 
     }
 
+    object Coil {
+        const val compose = "io.coil-kt:coil-compose:1.4.0"
+    }
+
+    object Accompanist {
+        private const val version = "0.23.0"
+        const val flowLayout = "com.google.accompanist:accompanist-flowlayout:$version"
+        const val insetsUi = "com.google.accompanist:accompanist-insets-ui:$version"
+    }
+
 }

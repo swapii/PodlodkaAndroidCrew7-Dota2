@@ -23,8 +23,9 @@ dependencies {
     implementation(Common.Android.X.Compose.material)
     implementation(Common.Android.X.Compose.tooling)
 
-    implementation("io.coil-kt:coil-compose:1.4.0")
+    implementation(Common.Coil.compose)
 
-    implementation("com.google.accompanist:accompanist-flowlayout:0.23.0")
+    implementation(Common.Accompanist.flowLayout)
+    implementation(Common.Accompanist.insetsUi)
 
 }

@@ -19,11 +19,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.boundsInParent
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
+import com.google.accompanist.insets.statusBarsPadding
 import podlodka.crew.android.seven.dota.common.presentation.withDensity
 
 @Composable
@@ -54,8 +57,11 @@ internal fun GameDetails() {
                 )
         )
 
+        HeaderShade()
+
         Toolbar(
             modifier = Modifier
+                .statusBarsPadding()
                 .padding(24.dp)
         )
 
@@ -87,5 +93,26 @@ internal fun GameDetails() {
         }
 
     }
+
+}
+
+@Composable
+private fun HeaderShade() {
+
+    val shadeColor = Color(0xFF050B18)
+
+    Box(
+        modifier = Modifier
+            .background(
+                Brush.verticalGradient(
+                    listOf(
+                        shadeColor,
+                        shadeColor.copy(alpha = 0f),
+                    )
+                )
+            )
+            .fillMaxWidth()
+            .height(128.dp)
+    )
 
 }

@@ -7,6 +7,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
+import com.google.accompanist.insets.ProvideWindowInsets
 import podlodka.crew.android.seven.dota.feature.game.details.presentation.GameDetails
 
 class MainActivity : ComponentActivity() {
@@ -17,15 +18,17 @@ class MainActivity : ComponentActivity() {
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
         setContent {
-            MaterialTheme(
-                colors = darkColors(
-                    primary = Color(0xFF41A0E7),
-                    primaryVariant = Color(0x3D44A9F4),
-                    secondary = Color(0xFFF4D144),
-                    background = Color(0xFF050B18),
-                ),
-            ) {
-                GameDetails()
+            ProvideWindowInsets {
+                MaterialTheme(
+                    colors = darkColors(
+                        primary = Color(0xFF41A0E7),
+                        primaryVariant = Color(0x3D44A9F4),
+                        secondary = Color(0xFFF4D144),
+                        background = Color(0xFF050B18),
+                    ),
+                ) {
+                    GameDetails()
+                }
             }
         }
 
