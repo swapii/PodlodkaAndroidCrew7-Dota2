@@ -9,8 +9,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import podlodka.crew.android.seven.dota.R
 import podlodka.crew.android.seven.dota.feature.game.details.domain.Media
-import podlodka.crew.android.seven.dota.feature.game.details.presentation.common.roundButton
+import podlodka.crew.android.seven.dota.feature.game.details.presentation.common.CircleButton
 
 @Composable
 internal fun MediaGallery(
@@ -58,13 +56,10 @@ private fun MediaItem(media: Media) {
                 .matchParentSize()
         )
         if (media is Media.Video) {
-            Icon(
-                ImageVector.vectorResource(R.drawable.iconly_arrow_right_2),
-                contentDescription = null,
-                tint = MaterialTheme.colors.onBackground,
+            CircleButton(
+                icon = ImageVector.vectorResource(R.drawable.iconly_arrow_right_2),
                 modifier = Modifier
                     .align(Alignment.Center)
-                    .roundButton()
             )
         }
     }
