@@ -20,6 +20,7 @@ internal fun CircleButton(
     icon: ImageVector,
     onClick: () -> Unit = {},
     modifier: Modifier = Modifier,
+    finalModifier: Modifier.() -> Modifier = { this },
 ) {
     Icon(
         imageVector = icon,
@@ -42,5 +43,6 @@ internal fun CircleButton(
             )
             .background(Color(0x47FFFFFF))
             .padding(16.dp)
+            .finalModifier()
     )
 }
