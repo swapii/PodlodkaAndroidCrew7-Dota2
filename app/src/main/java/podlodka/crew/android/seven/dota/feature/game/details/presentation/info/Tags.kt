@@ -43,7 +43,7 @@ private fun Tag(name: String) {
             fontSize = 10.sp,
             lineHeight = 12.19.sp,
         ),
-        color = MaterialTheme.colors.primaryVariant,
+        color = MaterialTheme.colors.primary,
         modifier = Modifier
             .clip(CircleShape)
             .background(MaterialTheme.colors.primaryVariant)
