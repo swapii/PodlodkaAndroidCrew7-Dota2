@@ -22,6 +22,9 @@ internal fun CircleButton(
     modifier: Modifier = Modifier,
     finalModifier: Modifier.() -> Modifier = { this },
 ) {
+
+    val color = Color(0xFFFFFFFF)
+
     Icon(
         imageVector = icon,
         contentDescription = null,
@@ -36,13 +39,14 @@ internal fun CircleButton(
                 shape = CircleShape,
                 brush = Brush.linearGradient(
                     colors = listOf(
-                        Color(0x00FFFFFF),
-                        Color(0x66FFFFFF),
+                        color.copy(alpha = 0f),
+                        color.copy(alpha = 0.4f),
                     ),
                 )
             )
-            .background(Color(0x47FFFFFF))
+            .background(color.copy(alpha = 0.28f))
             .padding(16.dp)
             .finalModifier()
     )
+
 }
