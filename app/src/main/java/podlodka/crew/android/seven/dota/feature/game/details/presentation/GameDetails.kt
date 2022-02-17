@@ -16,6 +16,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.boundsInParent
 import androidx.compose.ui.layout.onGloballyPositioned
@@ -36,33 +37,42 @@ internal fun GameDetails(
             .background(MaterialTheme.colors.background)
     ) {
 
+        val backgroundImageHeight = 300.dp
+
         Image(
             painter = rememberImagePainter(data = game.backgroundImageAddress),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(300.dp)
+                .height(backgroundImageHeight)
         )
 
         var bottomPanelHeight by remember { mutableStateOf(0f) }
 
         TopShade()
 
-        Toolbar(
-            modifier = Modifier
-                .statusBarsPadding()
-                .padding(24.dp)
-        )
+        val infoScrollState = rememberScrollState()
 
         Info(
             game = game,
             modifier = Modifier
-                .verticalScroll(rememberScrollState())
+                .verticalScroll(infoScrollState)
                 .padding(
-                    top = 260.dp,
+                    top = backgroundImageHeight - 40.dp,
                     bottom = (withDensity { bottomPanelHeight.toDp() } - 32.dp).coerceAtLeast(0.dp),
                 )
+        )
+
+        val toolbarAlpha =
+            ((backgroundImageHeight.value - infoScrollState.value) / backgroundImageHeight.value)
+                .coerceAtLeast(0f)
+
+        Toolbar(
+            modifier = Modifier
+                .statusBarsPadding()
+                .padding(24.dp)
+                .alpha(toolbarAlpha)
         )
 
         Footer(
