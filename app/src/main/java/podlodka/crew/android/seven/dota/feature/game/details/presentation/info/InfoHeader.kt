@@ -15,9 +15,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import coil.compose.rememberImagePainter
+import podlodka.crew.android.seven.dota.common.presentation.Fonts
 import podlodka.crew.android.seven.dota.feature.rating.domain.Rating
 import podlodka.crew.android.seven.dota.feature.rating.presentation.RatingStars
 
@@ -56,7 +60,13 @@ internal fun Header(
 
         Text(
             text = name,
-            style = MaterialTheme.typography.h6,
+            fontFamily = Fonts.SkModernist,
+            style = TextStyle(
+                fontWeight = FontWeight.Bold,
+                fontSize = 20.sp,
+                lineHeight = 26.sp,
+                letterSpacing = 0.5.sp
+            ),
             color = MaterialTheme.colors.onBackground,
             modifier = Modifier
                 .constrainAs(titleRef) {
@@ -79,7 +89,13 @@ internal fun Header(
 
             Text(
                 text = reviewsCount,
-                style = MaterialTheme.typography.caption,
+                fontFamily = Fonts.SkModernist,
+                style = TextStyle(
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 12.sp,
+                    lineHeight = 14.4.sp,
+                    letterSpacing = 0.5.sp
+                ),
                 color = Color(0xFF45454D),
             )
 

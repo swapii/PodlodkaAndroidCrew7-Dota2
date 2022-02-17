@@ -9,7 +9,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import podlodka.crew.android.seven.dota.common.presentation.Fonts
 import podlodka.crew.android.seven.dota.feature.game.details.domain.Game
 
 @Composable
@@ -39,7 +43,12 @@ internal fun Info(
 
         Text(
             text = game.description,
-            style = MaterialTheme.typography.caption,
+            fontFamily = Fonts.SkModernist,
+            style = TextStyle(
+                fontWeight = FontWeight.Normal,
+                fontSize = 12.sp,
+                lineHeight = 19.sp,
+            ),
             color = Color(0xB3EEF2FB),
             modifier = Modifier
                 .padding(horizontal = horizontalPadding)
