@@ -44,6 +44,14 @@ internal fun GameDetails() {
 
         var bottomPanelHeight by remember { mutableStateOf(0f) }
 
+        TopShade()
+
+        Toolbar(
+            modifier = Modifier
+                .statusBarsPadding()
+                .padding(24.dp)
+        )
+
         Info(
             modifier = Modifier
                 .verticalScroll(rememberScrollState())
@@ -51,14 +59,6 @@ internal fun GameDetails() {
                     top = 260.dp,
                     bottom = (withDensity { bottomPanelHeight.toDp() } - 32.dp).coerceAtLeast(0.dp),
                 )
-        )
-
-        TopShade()
-
-        Toolbar(
-            modifier = Modifier
-                .statusBarsPadding()
-                .padding(24.dp)
         )
 
         Footer(
