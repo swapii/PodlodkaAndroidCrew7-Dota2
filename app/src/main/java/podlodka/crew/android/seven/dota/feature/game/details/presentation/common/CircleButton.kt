@@ -20,7 +20,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.layout.boundsInWindow
+import androidx.compose.ui.layout.boundsInParent
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
@@ -48,7 +48,7 @@ internal fun CircleButton(
                 onClick = onClick,
             )
             .onGloballyPositioned {
-                boundsInParent = it.boundsInWindow()
+                boundsInParent = it.boundsInParent()
             }
             .let { modifier ->
                 parentBackground?.let { background ->
