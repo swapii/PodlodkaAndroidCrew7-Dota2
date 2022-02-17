@@ -11,6 +11,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
@@ -33,6 +34,7 @@ internal fun Media(horizontalPadding: Dp) {
                 Image(
                     painter = rememberImagePainter(data = imageAddress),
                     contentDescription = null,
+                    contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .clip(RoundedCornerShape(14.dp))
                         .size(width = 240.dp, height = 128.dp)
