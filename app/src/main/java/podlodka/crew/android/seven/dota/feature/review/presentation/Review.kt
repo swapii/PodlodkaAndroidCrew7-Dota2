@@ -16,8 +16,11 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import coil.compose.rememberImagePainter
+import java.time.Instant
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
-import podlodka.crew.android.seven.dota.common.formatAtZone
+import java.util.Locale
 import podlodka.crew.android.seven.dota.feature.review.data.reviewFromAugusteConte
 import podlodka.crew.android.seven.dota.feature.review.domain.Review
 
@@ -61,7 +64,7 @@ internal fun Review(
         )
 
         Text(
-            text = review.createdAt.formatAtZone(formatStyle = FormatStyle.MEDIUM),
+            text = review.createdAt.format(),
             color = Color(0x66FFFFFF),
             style = MaterialTheme.typography.caption,
             modifier = Modifier
@@ -94,3 +97,9 @@ fun PreviewOfReviewFromAugusteConte() {
             .padding(24.dp)
     )
 }
+
+@Composable
+private fun Instant.format() =
+    DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)
+        .withLocale(Locale.US)
+        .format(atZone(ZoneId.systemDefault()))
