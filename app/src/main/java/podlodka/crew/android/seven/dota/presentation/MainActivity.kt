@@ -8,6 +8,7 @@ import androidx.compose.material.darkColors
 import androidx.compose.ui.graphics.Color
 import androidx.core.view.WindowCompat
 import com.google.accompanist.insets.ProvideWindowInsets
+import podlodka.crew.android.seven.dota.feature.game.details.data.Dota2
 import podlodka.crew.android.seven.dota.feature.game.details.presentation.GameDetails
 
 class MainActivity : ComponentActivity() {
@@ -27,7 +28,7 @@ class MainActivity : ComponentActivity() {
                         background = Color(0xFF050B18),
                     ),
                 ) {
-                    GameDetails()
+                    GameDetails(Dota2)
                 }
             }
         }

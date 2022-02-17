@@ -1,5 +1,6 @@
 package podlodka.crew.android.seven.dota.feature.game.details.presentation.info
 
+import android.net.Uri
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -16,15 +17,18 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
-import androidx.core.net.toUri
 import coil.compose.rememberImagePainter
 import podlodka.crew.android.seven.dota.feature.rating.domain.Rating
 import podlodka.crew.android.seven.dota.feature.rating.presentation.RatingStars
 
 @Composable
-fun Header(
-    modifier: Modifier = Modifier,
+internal fun Header(
+    logo: Uri,
+    name: String,
     rating: Rating,
+    reviewsCount: String,
+    tags: List<String>,
+    modifier: Modifier = Modifier,
 ) {
 
     ConstraintLayout(
@@ -34,9 +38,7 @@ fun Header(
         val (logoRef, titleRef, ratingRef, tagsRef) = createRefs()
 
         Image(
-            painter = rememberImagePainter(
-                data = "https://scontent-arn2-1.xx.fbcdn.net/v/t1.6435-9/p320x320/66162438_2584053128326795_4329606593789296640_n.png?_nc_cat=109&ccb=1-5&_nc_sid=7aed08&efg=eyJpIjoidCJ9&_nc_ohc=Kcc6QC-e9xwAX8H9-wH&_nc_ht=scontent-arn2-1.xx&oh=00_AT9sONelr7lahF3mM77d0texHRPYQq5Qd4FYMCad7oGf_A&oe=6231E698".toUri()
-            ),
+            painter = rememberImagePainter(data = logo),
             contentDescription = null,
             modifier = Modifier
                 .constrainAs(logoRef) {
@@ -53,7 +55,7 @@ fun Header(
         )
 
         Text(
-            text = "DoTA 2",
+            text = name,
             style = MaterialTheme.typography.h6,
             color = MaterialTheme.colors.onBackground,
             modifier = Modifier
@@ -76,7 +78,7 @@ fun Header(
             RatingStars(rating = rating)
 
             Text(
-                text = "70M",
+                text = reviewsCount,
                 style = MaterialTheme.typography.caption,
                 color = Color(0xFF45454D),
             )
@@ -84,6 +86,7 @@ fun Header(
         }
 
         Tags(
+            tags = tags,
             modifier = Modifier
                 .constrainAs(tagsRef) {
                     top.linkTo(ratingRef.bottom, margin = 32.dp)

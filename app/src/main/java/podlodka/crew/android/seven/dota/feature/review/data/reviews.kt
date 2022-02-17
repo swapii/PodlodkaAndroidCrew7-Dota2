@@ -21,9 +21,3 @@ internal val reviewFromJangMarcelino =
         createdAt = Instant.parse("2020-11-27T22:49:00.00Z"),
         comment = "Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.",
     )
-
-internal val allReviews =
-    listOf(
-        reviewFromAugusteConte,
-        reviewFromJangMarcelino,
-    )

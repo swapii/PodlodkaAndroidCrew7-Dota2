@@ -13,6 +13,7 @@ import com.google.accompanist.flowlayout.FlowRow
 
 @Composable
 internal fun Tags(
+    tags: List<String>,
     modifier: Modifier = Modifier,
 ) {
     FlowRow(
@@ -20,11 +21,7 @@ internal fun Tags(
         crossAxisSpacing = 10.dp,
         modifier = modifier,
     ) {
-        listOf(
-            "MOBA",
-            "Multiplayer",
-            "Strategy",
-        )
+        tags
             .map { it.uppercase() }
             .forEach { name ->
                 Tag(name)

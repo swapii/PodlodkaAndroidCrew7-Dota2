@@ -7,12 +7,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import podlodka.crew.android.seven.dota.feature.review.data.allReviews
+import podlodka.crew.android.seven.dota.feature.review.domain.Review
 
 @Composable
-internal fun Reviews(horizontalPadding: Dp) {
+internal fun Reviews(horizontalPadding: Dp, items: List<Review>) {
     Column {
-        allReviews
+        items
             .forEachIndexed { index, review ->
                 if (index > 0) {
                     Divider(

@@ -13,14 +13,18 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
+import java.util.Locale
 import podlodka.crew.android.seven.dota.feature.rating.domain.Rating
 import podlodka.crew.android.seven.dota.feature.rating.presentation.RatingStars
+import podlodka.crew.android.seven.dota.feature.review.domain.Review
 import podlodka.crew.android.seven.dota.feature.review.presentation.Reviews
 
 @Composable
 internal fun ReviewsAndRatings(
     horizontalPadding: Dp,
     rating: Rating,
+    reviews: List<Review>,
+    reviewsCount: String,
 ) {
 
     Column {
@@ -45,7 +49,7 @@ internal fun ReviewsAndRatings(
             createVerticalChain(starsRef, reviewsCountRef, chainStyle = ChainStyle.Packed(0.5F))
 
             Text(
-                text = "4.9",
+                text = "%.1f".format(Locale.US, rating.value * 5.0f),
                 style = MaterialTheme.typography.h3,
                 color = MaterialTheme.colors.onBackground,
                 modifier = Modifier
@@ -66,7 +70,7 @@ internal fun ReviewsAndRatings(
             )
 
             Text(
-                text = "70M Reviews",
+                text = "$reviewsCount Reviews",
                 style = MaterialTheme.typography.caption,
                 color = Color(0xFFA8ADB7),
                 modifier = Modifier
@@ -80,7 +84,7 @@ internal fun ReviewsAndRatings(
 
         }
 
-        Reviews(horizontalPadding)
+        Reviews(horizontalPadding, reviews)
 
     }
 

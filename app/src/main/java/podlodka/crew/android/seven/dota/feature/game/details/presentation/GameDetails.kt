@@ -23,10 +23,13 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.google.accompanist.insets.statusBarsPadding
 import podlodka.crew.android.seven.dota.common.presentation.withDensity
+import podlodka.crew.android.seven.dota.feature.game.details.domain.Game
 import podlodka.crew.android.seven.dota.feature.game.details.presentation.info.Info
 
 @Composable
-internal fun GameDetails() {
+internal fun GameDetails(
+    game: Game,
+) {
 
     Box(
         modifier = Modifier
@@ -34,7 +37,7 @@ internal fun GameDetails() {
     ) {
 
         Image(
-            painter = rememberImagePainter(data = "https://s3-alpha-sig.figma.com/img/284d/401f/f98fb91fbba05e15f99cdcd8e4f9d673?Expires=1646006400&Signature=OAGiVBdLRFBWxvG4UkCHI9QYZQ6UoC2Mo5nag0ZPMmDdPcCG6xKE9-TMgsHvWjfaauYmi8XSHiQyb3fRd5NXPuDWkw5ByMPqj7R97EDvFer8G9pZDXa~5rAMlPuqEggABRYR8zeOd~kKDJsvyyKeVGGUf90JyW6z7kwYZPIKmhfpard6R38-Y9ddX-xbzNTcPE5-7hRSobk3BtUMEJfz5UCKaSaQrZPpsHloNiXeAtI7RDQUuGMLWA5gMc6VFgTeZ4fl0I7K8M~qHIInOUzRbIDjl8gXFXXP0hpitPIfmX9A6vOVdxdjeel2nkQKLyv0ndeO6h3wsmec3WkB38R-0w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"),
+            painter = rememberImagePainter(data = game.backgroundImageAddress),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
@@ -53,6 +56,7 @@ internal fun GameDetails() {
         )
 
         Info(
+            game = game,
             modifier = Modifier
                 .verticalScroll(rememberScrollState())
                 .padding(
